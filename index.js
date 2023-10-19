@@ -1,6 +1,25 @@
-function hasTargetSum(array, target) {
+
   // Write your algorithm here
+  function hasTargetSum(nums, target) {
+    // Iterate through the array using two nested loops
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            // Check if the pair of numbers adds up to the target
+            if (nums[i] + nums[j] === target) {
+                return true;
+            }
+        }
+    }
+    // If no pair is found, return false
+    return false;
 }
+
+//Test cases
+//console.log(hasTargetSum([3, 8, 12, 4, 11, 7], 10));  // true
+//console.log(hasTargetSum([22, 19, 4, 6, 30], 25));    // true
+//console.log(hasTargetSum([1, 2, 5], 4));              // false
+
+
 
 /* 
   Write the Big O time complexity of your function here
